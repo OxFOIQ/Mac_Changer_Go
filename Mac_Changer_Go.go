@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"moul.io/banner"
+	"fmt"
 )
 
 //Execution Command
