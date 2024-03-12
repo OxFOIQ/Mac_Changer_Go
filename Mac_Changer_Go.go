@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"moul.io/banner"
 )
 
 //Execution Command
@@ -34,6 +35,8 @@ func exec_Command (command string , args_arr []string) (err error) {
 
 
 func main() {
+	#Banner
+	fmt.Println(banner.Inline("GoMac"))
 	//handle arguments
 	in_face := flag.String("iface" , "" , "interface you wish to change" )
 	new_Mac := flag.String("mac" , "" , "new mac address" )
@@ -43,5 +46,6 @@ func main() {
 	exec_Command("sudo" , []string{"ifconfig" , *in_face , "down"})
 	exec_Command("sudo" , []string{"ifconfig" , *in_face , "hw" , "ether" , *new_Mac})
 	exec_Command("sudo" , []string{"ifconfig" , *in_face ,  "up"})
+	fmt.Println("Changed Successully")
 
 }
