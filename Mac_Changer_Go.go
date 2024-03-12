@@ -36,7 +36,7 @@ func exec_Command (command string , args_arr []string) (err error) {
 
 
 func main() {
-	#Banner
+	//Banner
 	fmt.Println(banner.Inline("GoMac"))
 	//handle arguments
 	in_face := flag.String("iface" , "" , "interface you wish to change" )
